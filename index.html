@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="my">
+    <head>
+        <title>Myanmar Money Calculator</title>
+        <meta name="title" content="Myanmar Money Calculator">
+        <meta name="description" content="Myanmar Money Calculator. To calculate Myanmar money easily! In our calculator, can calculate Ten thousand kyat to Fifty kyat easily.">
+        <meta name="keywords" content="Myanmar Money Calculator, မြန်မာငွေတွက်စက်">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="robots" content="index, nofollow">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="http://localhost/mmcalc/img/favicon16.ico">
+        <link rel="manifest" href="http://localhost/mmcalc/manifest.webmanifest">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Padauk&display=swap');
+            @media (max-width: 576px) { .flex-item-left{display: none;} .flex-item-right{display: none;} table {width:100%;}}
+            @media (min-width: 1200px) { table { width:400px; }}
+            thead>tr th{ padding:5px 0px 0px 0px; text-align:center; vertical-align:middle; background:#1f1616; color:#fff; height:35px; }
+            tbody>tr td{ text-align:right; vertical-align:middle; padding-right: 10px; height:30px; color:black; }
+            tfoot>tr td{ padding-top:5px; text-align:right; vertical-align:middle; padding-right: 10px; font-weight: 400; height: 30px; }
+            .odd { background:#e1e1e1; }
+            .even { background-color: #b1b1b1; }
+            .total { background-color: darkgoldenrod; }
+            .total-text { background-color: maroon; color:white; }
+            .w7 { width:7rem; }
+            table td { position: relative; }
+            table td input {position: absolute;display: block;top:0;left:0;margin: 0;padding: 0px 10px 0px 0px;height: 100%;width: 100%;box-sizing: border-box;background: inherit;text-align: inherit;border:none;font-size:medium;}
+            * {font-family: "Myanmar3;";}
+            .flex-container {display: flex;flex-direction: row;text-align: center;min-height: 98vh;}
+            .flex-item-left { flex: 33%;}
+            .flex-item-center {flex: 34%;min-height: 98vh;justify-content: center;align-items: center;display: flex;}
+            .flex-item-right {flex: 33%;}
+        </style>
+    </head>
+    <body style="font-family: 'Masterpiece Uni Sans', sans-serif;">
+        <div class="flex-container">
+            <div class="flex-item-left"></div>
+            <div class="flex-item-center">
+                <form action="#" autocomplete="off">
+                    <table >
+                        <thead>
+                            <tr class="head">
+                                <th class="w7"><label>ကျပ်တန်</label></th><th><label>အရေအတွက်</label></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd">
+                                <td class="w7"><label>၁၀,၀၀၀</label></td>
+                                <td><input type="text" id="ten_thousand" onkeyup="changeHandler(this);"><br/><label></td>
+                            </tr>
+                            <tr class="even">
+                                <td class="w7"><label>၅,၀၀၀</label></td>
+                                <td><input type="text" id="five_thousand" onkeyup="changeHandler(this);"><br/></td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="w7"><label>၁,၀၀၀</label></td>
+                                <td><input type="text" id="one_thousand" onkeyup="changeHandler(this);"><br/></td>
+                            </tr>
+                            <tr class="even">
+                                <td class="w7"><label>၅၀၀</label></td>
+                                <td><input type="text" id="five_hundred" onkeyup="changeHandler(this);"><br/></td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="w7"><label>၂၀၀</label></td>
+                                <td><input type="text" id="two_hundred" onkeyup="changeHandler(this);"><br/></td>
+                            </tr>
+                            <tr class="even">
+                                <td class="w7"><label>၁၀၀</label></td>
+                                <td><input type="text" id="one_hundred" onkeyup="changeHandler(this);"><br/></td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="w7"><label>၅၀</label></td>
+                                <td><input type="text" id="fifty" onkeyup="changeHandler(this);"><br/></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="total">
+                                <td><label >စုစုပေါင်း</label></td>
+                                <td><strong><label id="total_number">0</label></strong></td>
+                            </tr>
+                            <tr class="total-text">
+                                <td colspan="2" style="text-align:center;padding-right: 0px;">
+                                    <label id="total_text">၀ကျပ်</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align:center;padding-right: 0px;">
+                                    <a href="#">Developed By: SHA85!</a>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </form>
+                <!-- <button class="add-button">Add to home screen</button> -->
+            </div>
+            <div class="flex-item-right"></div>
+        </div>
+        <script src="http://localhost/mmcalc/index.js" type="module"></script>
+        <script>
+            var ten_thousand = document.getElementById("ten_thousand");
+            var five_thousand = document.getElementById("five_thousand");
+            var one_thousand = document.getElementById("one_thousand");
+            var five_hundred = document.getElementById("five_hundred");
+            var two_hundred = document.getElementById("two_hundred");
+            var one_hundred = document.getElementById("one_hundred");
+            var fifty = document.getElementById("fifty");
+            var nf = new Intl.NumberFormat('en-US');
+            
+            function ENN_MMN(str) {
+				str=str.replaceAll('0', '၀');
+				str=str.replaceAll('1', '၁');
+				str=str.replaceAll('2', '၂');
+				str=str.replaceAll('3', '၃');
+				str=str.replaceAll('4', '၄');
+				str=str.replaceAll('5', '၅');
+				str=str.replaceAll('6', '၆');
+				str=str.replaceAll('7', '၇');
+				str=str.replaceAll('8', '၈');
+				str=str.replaceAll('9', '၉');
+				return str;
+			}
+
+            function numberString(str) {
+                let s = "";
+                let strArr = str.toString();
+                let len = strArr.length -1;
+                let labelArr = ["ကျပ်", "ဆယ်", "ရာ", "ထောင်", "သောင်း", "သိန်း"];
+    
+                let j = 0;
+                let lakh = "";
+                for (let i = len; i >= 0; i--) {
+                    if(j<5) {
+                        if(strArr[i] == "0") j++;
+                        else s = strArr[i] + labelArr[j++] + " " + s;
+                    }
+                    else lakh = strArr[i] + lakh;
+                }
+                if(len > 4) {
+                    s = nf.format(lakh) + labelArr[j]+ " " + s;
+                }
+
+                return ENN_MMN(s);
+            }
+
+            function calcaulateTotal() {
+                let total = 0;
+                total += (ten_thousand.value.replace(/\,/g, '')) * 10000;
+                total += (five_thousand.value.replace(/\,/g, '')) * 5000;
+                total += (one_thousand.value.replace(/\,/g, '')) * 1000;
+                total += (five_hundred.value.replace(/\,/g, '')) * 500;
+                total += (two_hundred.value.replace(/\,/g, '')) * 200;
+                total += (one_hundred.value.replace(/\,/g, '')) * 100;
+                total += (fifty.value.replace(/\,/g, '')) * 50;
+                document.getElementById("total_number").innerHTML = nf.format(total);
+                document.getElementById("total_text").innerHTML = numberString(total);
+            }
+
+            function changeHandler(obj) {
+                calcaulateTotal();
+                let currentValue = (obj.value).replace(/[^0-9.]/g, '');
+                obj.value = nf.format(currentValue);
+            }
+        </script>
+    </body>
+</html>

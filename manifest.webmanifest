@@ -1,0 +1,40 @@
+{
+    "short_name": "MM Money Calc",
+    "name": "Myanmar Money Calculator",
+    "icons": [
+        {
+            "src": "./img/icon192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "./img/icon512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "id":"mmcalc-v1",
+    "start_url": "http://localhost/mmcalc/index.html",
+    "background_color": "#3367D6",
+    "theme_color": "#3367D6",
+    "display": "standalone",
+    "scope": "http://localhost/mmcalc/",
+    "orientation": "any",
+    "shortcuts": [
+        {
+            "name": "Myanmar Money Calculator!",
+            "short_name": "MM Money Calc",
+            "description": "Sum myanmar money easily with me!",
+            "url": "http://localhost/mmcalc",
+            "icons": [{ "src": "./img/icon192.png", "sizes": "192x192" }]
+        }
+    ],
+    "description": "Sum myanmar money easily with me!",
+    "screenshots": [
+        {
+            "src": "./img/screen.png",
+            "type": "image/png",
+            "sizes": "420x408"
+        }
+    ]
+}
