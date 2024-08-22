@@ -1,5 +1,10 @@
 # mmcalc
-Myanmar Money Calculator to sum Myanmar money range 10,000 Kyats to 50 Kyats. Simple javascript PWA application.
+Myanmar Money Calculator
+
+မြန်မာငွေကျပ် ၁ သောင်းတန်၊ ၅ ထောင်တန်၊ ၁ ထောင်တန်၊ ၅၀၀ တန်၊ ၂၀၀တန်၊ ၁၀၀တန်၊ ၅၀ ကျပ်တန် တို့၏ အရေအတွက်ကို ရိုက်ထည့်ပြီး
+တန်ဖိုး စုစုပေါင်းကို သိနိုင်ပါသည်။
+
+Simple javascript PWA application.
 
 # Sample Website
 https://dooded.com/mmcalc/
