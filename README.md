@@ -6,9 +6,6 @@ Myanmar Money Calculator
 
 Simple javascript PWA application.
 
-# Sample Website
-https://dooded.com/mmcalc/
-
 # Sample Photo
 ![mmcalc](https://user-images.githubusercontent.com/33415417/193205456-afa899e9-7795-47de-902a-65b86e8c1f18.png)
 
